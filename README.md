@@ -8,11 +8,11 @@ What you will be doing is moving the title and content of your blog from your we
 There are a series of steps that you'll need to complete:
 
 ## Copy your assignment 2 web server code to it's own repository
-While we are grading your assignment 2 code, you will need to modify your web server to call your API to get the title and content of your blog. So your first step is to create your webarch-assign-3-webserver repo from the customary link and then copy your assignment 2 code to this repo. Be sure that you are able to install all relevant node packages using the command ```npm install``` (ensure that your package.json file has all of the dependencies that you need)
+While we are grading your assignment 2 code, you will need to modify your web server to call your API to get the title and content of your blog. So your first step is to create your assign-3-webserver repo from the customary link and then copy your assignment 2 code to this repo. Be sure that you are able to install all relevant node packages using the command ```npm install``` (ensure that your package.json file has all of the dependencies that you need)
 
-## Set up your API in your webarch-assign-3-api repo
+## Set up your API in your assign-3-api repo
 
-Next you will need to set up your API in a separate repo called webarch-assign-3-api. You will need at least the following npm modules installed (be sure to install with the ```--save``` option to modify the package.json).
+Next you will need to set up your API in a separate repo called assign-3-api. You will need at least the following npm modules installed (be sure to install with the ```--save``` option to modify the package.json).
 
  - [sqlite](https://www.npmjs.com/package/sqlite3) A full file based database
  - [express](http://expressjs.com) The Express framework we used for our webserver
@@ -20,7 +20,7 @@ Next you will need to set up your API in a separate repo called webarch-assign-3
  
 **Note:** Be sure to run your server on a different port (other than 3000). If you run two servers on the same port you will get an error during the startup of the second server
 
-## Create two endpoints to the API in your webarch-assign-3-api repo
+## Create two endpoints to the API in your assign-3-api repo
 
 ### POST /blog
 
@@ -68,7 +68,7 @@ You can now use curl to send a request to your api, sending a-mindful-shift-of-f
 curl -vX POST https://localhost:3001/blog -d @a-mindful-shift-of-focus.json --header "Content-Type: application/json"
 ```
 
-## Modify your webarch-assign-3-webserver repo to call your webarch-assign-3-api to retrieve the blog information
+## Modify your assign-3-webserver repo to call your assign-3-api to retrieve the blog information
 
 You will now need to delete all of the hard coded blog content and send a request from your web server to your api to retrieve the blog title and content. You will need to use the request npm package in order to accomplish this. Consider the GET requests that you would need to make in order to retrieve the title and the content data of each blog post.
 
