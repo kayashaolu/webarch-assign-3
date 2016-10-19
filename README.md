@@ -3,12 +3,12 @@ Build and consume your own API
 
 In this assignment you will be tasked with creating your very own api, which you will then modify your web server in assignment 2 to use. You will also learn how to connect to a database to insert and retrieve data from a persistent store of information.
 
-What you will be doing is moving the title and content of your blog from your web server to a database. You will be running two servers: a web server that will be hosting your webpage as in assignment 2, and a server that will be hosting your API that will be delivering the content of your blog to your web server.
+What you will be doing is moving the title and content of your blog from your web server to a database. You will be running two servers: a web server that will be hosting your web page as in assignment 2, and a server that will be hosting your API that will be delivering the content of your blog to your web server.
 
 There are a series of steps that you'll need to complete:
 
 ## Copy your assignment 2 web server code to it's own repository
-While we are grading your assignment 2 code, you will need to modify your webserver to call your API to get the title and content of your blog. So your first step is to craete your webarch-assign-3-webserver repo from the customary link and then copy your assignment 2 code to this repo. Be sure that you are able to install all relevant node packages using the command ```npm install``` (ensure that your package.json file has all of the dependencies that you need)
+While we are grading your assignment 2 code, you will need to modify your web server to call your API to get the title and content of your blog. So your first step is to create your webarch-assign-3-webserver repo from the customary link and then copy your assignment 2 code to this repo. Be sure that you are able to install all relevant node packages using the command ```npm install``` (ensure that your package.json file has all of the dependencies that you need)
 
 ## Set up your API in your webarch-assign-3-api repo
 
@@ -23,11 +23,12 @@ Next you will need to set up your API in a separate repo called webarch-assign-3
 ## Create two endpoints to the API in your webarch-assign-3-api repo
 
 ### POST /blog
+
 You will first create an endpoint with the path /blog that would do the following:
- - Create a table using sqllite (**only** if it doesn't exist) in a static file with the following fields
+ - Create a table using sqlite (**only** if it doesn't exist) in a static file with the following fields
   - **slug**: the unique slug of the blog post. For example, the blog post: A Mindful Shift of Focus should have the slug: a-mindful-shift-of-focus.md
   - **title**: the title of the blog post. For example for the "A Mindful Shift of Focus.md" post, the title should be: "A Mindful Shift of Focus"
-  - **content**: the content of the blog post. This should contain all of the HTML content that is after the title of your pages. The goal is to grab the content of the blog post from this api instead of hardcoding it in your web server.
+  - **content**: the content of the blog post. This should contain all of the HTML content that is after the title of your pages. The goal is to grab the content of the blog post from this api instead of hard coding it in your web server.
  - Accept the following body parameters with content type "application/json":
   - slug
   - title
@@ -69,11 +70,11 @@ curl -vX POST https://localhost:3001/blog -d @a-mindful-shift-of-focus.json --he
 
 ## Modify your webarch-assign-3-webserver repo to call your webarch-assign-3-api to retrieve the blog information
 
-You will now need to delete all of the hardcoded blog content and send a request from your web server to your api to retrieve the blog title and content. You will need to use the request npm package in order to accomplish this. Consider the GET requests that you would need to make in order to retrieve the title and the content data of each blog post.
+You will now need to delete all of the hard coded blog content and send a request from your web server to your api to retrieve the blog title and content. You will need to use the request npm package in order to accomplish this. Consider the GET requests that you would need to make in order to retrieve the title and the content data of each blog post.
 
 # Extra Credit
 
-Create another webpage on your web server with the path "/admin" and create a form where you can dynamically add new blog posts to your blog without editing any more code.
+Create another web page on your web server with the path "/admin" and create a form where you can dynamically add new blog posts to your blog without editing any more code.
 
 The form should have the following fields:
  - Slug
