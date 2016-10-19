@@ -72,6 +72,21 @@ curl -vX POST https://localhost:3001/blog -d @a-mindful-shift-of-focus.json --he
 
 You will now need to delete all of the hard coded blog content and send a request from your web server to your api to retrieve the blog title and content. You will need to use the request npm package in order to accomplish this. Consider the GET requests that you would need to make in order to retrieve the title and the content data of each blog post.
 
+## Add a LEARNINGS.md file at the root of your repository answering the following questions
+
+ 1. What is the function of the following technologies/concepts in your assignment:
+  1. Web Server
+  2. API
+  3. JSON
+  4. SQLite
+  5. curl
+  6. TCP
+  7. IP
+  8. Content Type
+ 2. How does your web server interact with your API? Talk about both endpoints and how they are used in this assignment
+ 3. Why did we use curl in this assignment?
+ 4. List all of the possible GET and POST requests that are sent and received from both your web server and your API and describe what what sent and received in each request/response
+
 # Extra Credit
 
 Create another web page on your web server with the path "/admin" and create a form where you can dynamically add new blog posts to your blog without editing any more code.
