@@ -8,17 +8,19 @@ What you will be doing is moving the title and content of your blog from your we
 There are a series of steps that you'll need to complete:
 
 ## Copy your assignment 2 web server code to it's own repository
-While we are grading your assignment 2 code, you will need to modify your web server to call your API to get the title and content of your blog. So your first step is to create your assign-3-webserver repo from the customary link and then copy your assignment 2 code to this repo. Be sure that you are able to install all relevant node packages using the command ```npm install``` (ensure that your package.json file has all of the dependencies that you need)
+While we are grading your assignment 2 code, you will need to modify your web server to call your API to get the title and content of your blog. So your first step is to create your assign-3-webserver repo from the customary link and then copy your assignment 2 code to this repo.
 
 ## Set up your API in your assign-3-api repo
 
-Next you will need to set up your API in a separate repo called assign-3-api. You will need at least the following npm modules installed (be sure to install with the ```--save``` option to modify the package.json).
-
- - [sqlite](https://www.npmjs.com/package/sqlite3) A full file based database
- - [express](http://expressjs.com) The Express framework we used for our webserver
- - [request](https://www.npmjs.com/package/request) Enables you to easily send HTTP request from the server
+Next you will need to set up your API in a separate repo called assign-3-api. 
  
-**Note:** Be sure to run your server on a different port (other than 3000). If you run two servers on the same port you will get an error during the startup of the second server
+**Note:** Be sure to run your server on a different port (other than 5000). If you run two servers on the same port you will get an error during the startup of the second server
+
+**Note:** Your vagrant box has opened ports 5000 - 5010. Choose one of those ports so that you can access your api from your host computer. i.e.:
+
+```
+flask run -h 0.0.0.0 -p 5001
+```
 
 ## Create two endpoints to the API in your assign-3-api repo
 
@@ -65,12 +67,12 @@ For example, in the file "a-mindful-shift-of-focus.json", the contents could be 
 You can now use curl to send a request to your api, sending a-mindful-shift-of-focus.json as the data:
 
 ```bash
-curl -vX POST https://localhost:3001/blog -d @a-mindful-shift-of-focus.json --header "Content-Type: application/json"
+curl -vX POST https://localhost:5001/blog -d @a-mindful-shift-of-focus.json --header "Content-Type: application/json"
 ```
 
 ## Modify your assign-3-webserver repo to call your assign-3-api to retrieve the blog information
 
-You will now need to delete all of the hard coded blog content and send a request from your web server to your api to retrieve the blog title and content. You will need to use the request npm package in order to accomplish this. Consider the GET requests that you would need to make in order to retrieve the title and the content data of each blog post.
+You will now need to delete all of the hard coded blog content and send a request from your web server to your api to retrieve the blog title and content. You will need the requests module we used for Mailgun to accomplish this. Consider the GET requests that you would need to make in order to retrieve the title and the content data of each blog post.
 
 ## Add a LEARNINGS.md file at the root of your repository answering the following questions
 
@@ -103,4 +105,4 @@ For example, if a user submitted the form with the content:
  - Title: Test blog post
  - Content: ```<h1>This is my first dynamic blog post</h1>```
  
-Then if the same user went to http://localhost:3000/test-blog-post, they should see a blog post with Title "Test blog post" and with the content ```<h1>This is my first dynamic blog post</h1>```
+Then if the same user went to http://localhost:5000/test-blog-post, they should see a blog post with Title "Test blog post" and with the content ```<h1>This is my first dynamic blog post</h1>```
