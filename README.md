@@ -67,7 +67,7 @@ For example, in the file "a-mindful-shift-of-focus.json", the contents could be 
 You can now use curl to send a request to your api, sending a-mindful-shift-of-focus.json as the data:
 
 ```bash
-curl -vX POST https://localhost:5001/blog -d @a-mindful-shift-of-focus.json --header "Content-Type: application/json"
+curl -vX POST http://localhost:5001/blog -d @a-mindful-shift-of-focus.json --header "Content-Type: application/json"
 ```
 
 ## Modify your assign-3-webserver repo to call your assign-3-api to retrieve the blog information
